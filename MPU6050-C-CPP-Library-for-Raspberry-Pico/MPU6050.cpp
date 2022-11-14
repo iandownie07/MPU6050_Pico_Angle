@@ -22,7 +22,7 @@ void MPU6050::getGyroRaw(int16_t gyro[3])
     uint8_t buffer[6];
     
     //Gyro data
-    reg = 0x43;
+    uint8_t reg = 0x43;
     i2c_write_blocking(I2C_PORT, MPU6050_ADDRESS, &reg, sizeof(reg), false );
     i2c_read_blocking(I2C_PORT, MPU6050_ADDRESS, buffer, sizeof(buffer), false );
     
